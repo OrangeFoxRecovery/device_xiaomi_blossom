@@ -1,0 +1,15 @@
+<manifest version="2.0" type="device" target-level="4">
+    <hal format="hidl">
+        <name>android.hardware.keymaster</name>
+        <transport>hwbinder</transport>
+        <fqname>@4.0::IKeymasterDevice/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.gatekeeper</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IGatekeeper/default</fqname>
+    </hal>
+    <sepolicy>
+        <version>30.0</version>
+    </sepolicy>
+</manifest>
