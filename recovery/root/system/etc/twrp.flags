@@ -4,6 +4,14 @@
 
 # mount point		fstype		device								flags
 
+# Logical Partition Images
+/system_image		emmc		/dev/block/mapper/system					flags=backup=1;display="System Image";flashimg=1
+/system_ext_image	emmc		/dev/block/mapper/system_ext					flags=backup=1;display="System EXT Image";flashimg=1
+/product_image		emmc		/dev/block/mapper/product					flags=backup=1;display="Product Image";flashimg=1
+/vendor_image		emmc		/dev/block/mapper/vendor					flags=backup=1;display="Vendor Image";flashimg=1
+/odm_image		emmc		/dev/block/mapper/odm						flags=backup=1;display="ODM Image";flashimg=1
+
+# Physical Partitions
 /recovery		emmc		/dev/block/platform/bootdevice/by-name/recovery			flags=display="Recovery";backup=1
 /boot			emmc		/dev/block/platform/bootdevice/by-name/boot			flags=display="Boot"
 /cache			ext4		/dev/block/platform/bootdevice/by-name/cache			flags=display="Cache"
