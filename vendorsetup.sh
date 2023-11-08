@@ -41,16 +41,16 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_SED_BINARY=1
 	export FOX_USE_XZ_UTILS=1
 	export OF_ENABLE_LPTOOLS=1
-        export OF_QUICK_BACKUP_LIST="/boot;/data;"
+	export OF_QUICK_BACKUP_LIST="/boot;/data;"
 	export OF_PATCH_AVB20=1
-        export FOX_DELETE_AROMAFM=1
-        export FOX_BUGGED_AOSP_ARB_WORKAROUND="1616300800"; # Sun 21 Mar 04:26:40 GMT 2021
+	export FOX_DELETE_AROMAFM=1
+	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1616300800"; # Sun 21 Mar 04:26:40 GMT 2021
 
 	# OTA
-        export OF_KEEP_DM_VERITY=1
-        export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
-        export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
-        export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
+	export OF_KEEP_DM_VERITY=1
+	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
+	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
+	export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
 
 	# try to prevent potential data format errors
 	export OF_UNBIND_SDCARD_F2FS=1
@@ -103,11 +103,11 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
-  	   export | grep "FOX" >> $FOX_BUILD_LOG_FILE
-  	   export | grep "OF_" >> $FOX_BUILD_LOG_FILE
-   	   export | grep "TARGET_" >> $FOX_BUILD_LOG_FILE
-  	   export | grep "TW_" >> $FOX_BUILD_LOG_FILE
- 	fi
+		export | grep "FOX" >> $FOX_BUILD_LOG_FILE
+		export | grep "OF_" >> $FOX_BUILD_LOG_FILE
+		export | grep "TARGET_" >> $FOX_BUILD_LOG_FILE
+		export | grep "TW_" >> $FOX_BUILD_LOG_FILE
+	fi
 else
 	if [ -z "$FOX_BUILD_DEVICE" -a -z "$BASH_SOURCE" ]; then
 		echo "I: This script requires bash. Not processing the $FDEVICE $(basename $0)"
